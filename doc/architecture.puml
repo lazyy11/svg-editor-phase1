@@ -8,6 +8,7 @@ package "src/infrastructure" as infra
 component "src/main.ts\nComposition root" as main
 main --> cli
 main --> infra
+main --> app
 cli --> app
 app --> domain
 infra --> app : implements ports

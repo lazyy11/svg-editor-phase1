@@ -1,0 +1,313 @@
+
+> svg-editor-phase1@0.1.0 check
+> npm test && npm run check:architecture
+
+
+> svg-editor-phase1@0.1.0 test
+> npm run build --silent && node --test dist/test/editor.test.js dist/test/svg.test.js dist/test/cli.test.js
+
+TAP version 13
+# Subtest: real executable: stdin, Chinese text, saving and reading an SVG path containing spaces
+ok 1 - real executable: stdin, Chinese text, saving and reading an SVG path containing spaces
+  ---
+  duration_ms: 137.4141
+  ...
+# Subtest: real executable: errors have one-line prefix, continue processing, batch reports failure
+ok 2 - real executable: errors have one-line prefix, continue processing, batch reports failure
+  ---
+  duration_ms: 131.203
+  ...
+# Subtest: real script entrypoint and failed read/write do not corrupt history or existing files
+ok 3 - real script entrypoint and failed read/write do not corrupt history or existing files
+  ---
+  duration_ms: 240.1593
+  ...
+# Subtest: missing script and invalid executable arguments terminate cleanly
+ok 4 - missing script and invalid executable arguments terminate cleanly
+  ---
+  duration_ms: 233.6289
+  ...
+# Subtest: help works before init and all document-dependent commands reject
+ok 5 - help works before init and all document-dependent commands reject
+  ---
+  duration_ms: 3.1198
+  ...
+# Subtest: rect: creation, polymorphic move/scale, undo/redo and absent default paint
+ok 6 - rect: creation, polymorphic move/scale, undo/redo and absent default paint
+  ---
+  duration_ms: 4.4054
+  ...
+# Subtest: circle: creation, polymorphic move/scale, undo/redo and absent default paint
+ok 7 - circle: creation, polymorphic move/scale, undo/redo and absent default paint
+  ---
+  duration_ms: 0.9761
+  ...
+# Subtest: ellipse: creation, polymorphic move/scale, undo/redo and absent default paint
+ok 8 - ellipse: creation, polymorphic move/scale, undo/redo and absent default paint
+  ---
+  duration_ms: 0.9953
+  ...
+# Subtest: line: creation, polymorphic move/scale, undo/redo and absent default paint
+ok 9 - line: creation, polymorphic move/scale, undo/redo and absent default paint
+  ---
+  duration_ms: 1.2043
+  ...
+# Subtest: text: creation, polymorphic move/scale, undo/redo and absent default paint
+ok 10 - text: creation, polymorphic move/scale, undo/redo and absent default paint
+  ---
+  duration_ms: 1.2113
+  ...
+# Subtest: g: creation, polymorphic move/scale, undo/redo and absent default paint
+ok 11 - g: creation, polymorphic move/scale, undo/redo and absent default paint
+  ---
+  duration_ms: 0.9999
+  ...
+# Subtest: id matching is case-sensitive and unique over nested groups
+ok 12 - id matching is case-sensitive and unique over nested groups
+  ---
+  duration_ms: 1.1271
+  ...
+# Subtest: all six types support create in; missing/non-container parents are atomic
+ok 13 - all six types support create in; missing/non-container parents are atomic
+  ---
+  duration_ms: 1.8688
+  ...
+# Subtest: nested Composite moves and scales each leaf exactly once; group style is inherited SVG
+ok 14 - nested Composite moves and scales each leaf exactly once; group style is inherited SVG
+  ---
+  duration_ms: 1.2712
+  ...
+# Subtest: group preserves document order and placement across original parents; one undo restores all
+ok 15 - group preserves document order and placement across original parents; one undo restores all
+  ---
+  duration_ms: 1.8561
+  ...
+# Subtest: group rejects ancestor/descendant selections in either order, duplicates and missing ids
+ok 16 - group rejects ancestor/descendant selections in either order, duplicates and missing ids
+  ---
+  duration_ms: 0.843
+  ...
+# Subtest: ungroup promotes children at the group position, undo restores subtree, top-level is rejected
+ok 17 - ungroup promotes children at the group position, undo restores subtree, top-level is rejected
+  ---
+  duration_ms: 1.236
+  ...
+# Subtest: addto appends, accepts an existing child, and rejects self/ancestor cycles
+ok 18 - addto appends, accepts an existing child, and rejects self/ancestor cycles
+  ---
+  duration_ms: 1.1374
+  ...
+# Subtest: front/back affect only siblings; delete subtree and one undo restores exact z-order
+ok 19 - front/back affect only siblings; delete subtree and one undo restores exact z-order
+  ---
+  duration_ms: 0.8555
+  ...
+# Subtest: new successful edit clears redo; failed edit and queries preserve redo
+ok 20 - new successful edit clears redo; failed edit and queries preserve redo
+  ---
+  duration_ms: 0.937
+  ...
+# Subtest: init: blocks undo/redo, editing re-enables only new history
+ok 21 - init: blocks undo/redo, editing re-enables only new history
+  ---
+  duration_ms: 0.815
+  ...
+# Subtest: canvas 900 700: blocks undo/redo, editing re-enables only new history
+ok 22 - canvas 900 700: blocks undo/redo, editing re-enables only new history
+  ---
+  duration_ms: 1.0588
+  ...
+# Subtest: save saved.svg: blocks undo/redo, editing re-enables only new history
+ok 23 - save saved.svg: blocks undo/redo, editing re-enables only new history
+  ---
+  duration_ms: 1.0581
+  ...
+# Subtest: read imported.svg: blocks undo/redo, editing re-enables only new history
+ok 24 - read imported.svg: blocks undo/redo, editing re-enables only new history
+  ---
+  duration_ms: 2.7934
+  ...
+# Subtest: failed read/save/init/canvas preserve document, current path, and history
+ok 25 - failed read/save/init/canvas preserve document, current path, and history
+  ---
+  duration_ms: 0.8613
+  ...
+# Subtest: atomic validation: scale r 0
+ok 26 - atomic validation: scale r 0
+  ---
+  duration_ms: 0.3919
+  ...
+# Subtest: atomic validation: scale r -2
+ok 27 - atomic validation: scale r -2
+  ---
+  duration_ms: 0.2812
+  ...
+# Subtest: atomic validation: scale r NaN
+ok 28 - atomic validation: scale r NaN
+  ---
+  duration_ms: 0.2616
+  ...
+# Subtest: atomic validation: move r Infinity 0
+ok 29 - atomic validation: move r Infinity 0
+  ---
+  duration_ms: 0.3912
+  ...
+# Subtest: atomic validation: set r width -1
+ok 30 - atomic validation: set r width -1
+  ---
+  duration_ms: 0.3338
+  ...
+# Subtest: atomic validation: set r x 1e999
+ok 31 - atomic validation: set r x 1e999
+  ---
+  duration_ms: 0.3243
+  ...
+# Subtest: atomic validation: set r onclick alert
+ok 32 - atomic validation: set r onclick alert
+  ---
+  duration_ms: 0.281
+  ...
+# Subtest: atomic validation: set r text hello
+ok 33 - atomic validation: set r text hello
+  ---
+  duration_ms: 0.266
+  ...
+# Subtest: atomic validation: set r stroke-width -1
+ok 34 - atomic validation: set r stroke-width -1
+  ---
+  duration_ms: 0.307
+  ...
+# Subtest: atomic validation: set r fill "url(https://example.com/payload)"
+ok 35 - atomic validation: set r fill "url(https://example.com/payload)"
+  ---
+  duration_ms: 1.7322
+  ...
+# Subtest: atomic validation: create hexagon h
+ok 36 - atomic validation: create hexagon h
+  ---
+  duration_ms: 0.3924
+  ...
+# Subtest: atomic validation: create box h
+ok 37 - atomic validation: create box h
+  ---
+  duration_ms: 0.3445
+  ...
+# Subtest: overflow halfway through recursive group edit rolls back every child
+ok 38 - overflow halfway through recursive group edit rolls back every child
+  ---
+  duration_ms: 1.1806
+  ...
+# Subtest: double quotes, empty text, escaped quotes, spaces in paths, comments and color hashes
+ok 39 - double quotes, empty text, escaped quotes, spaces in paths, comments and color hashes
+  ---
+  duration_ms: 0.7081
+  ...
+# Subtest: tree/show contain geometry and parent, and query snapshots cannot change live state
+ok 40 - tree/show contain geometry and parent, and query snapshots cannot change live state
+  ---
+  duration_ms: 0.6364
+  ...
+# Subtest: assignment external SVG: missing id warning, all seven shapes, geometry and hierarchy
+ok 41 - assignment external SVG: missing id warning, all seven shapes, geometry and hierarchy
+  ---
+  duration_ms: 11.8931
+  ...
+# Subtest: auto ids reserve later explicit ids and are unique across all nested groups
+ok 42 - auto ids reserve later explicit ids and are unique across all nested groups
+  ---
+  duration_ms: 0.9142
+  ...
+# Subtest: save-read-save round trip preserves six kinds, styles, text escaping, order and nesting
+ok 43 - save-read-save round trip preserves six kinds, styles, text escaping, order and nesting
+  ---
+  duration_ms: 5.869
+  ...
+# Subtest: future data-kind marker degrades to ordinary g without loading a plugin
+ok 44 - future data-kind marker degrades to ordinary g without loading a plugin
+  ---
+  duration_ms: 0.5012
+  ...
+# Subtest: read rejects duplicate ids, preserving the active document and undo stack
+ok 45 - read rejects duplicate ids, preserving the active document and undo stack
+  ---
+  duration_ms: 1.3412
+  ...
+# Subtest: read rejects malformed XML, preserving the active document and undo stack
+ok 46 - read rejects malformed XML, preserving the active document and undo stack
+  ---
+  duration_ms: 0.9939
+  ...
+# Subtest: read rejects empty file, preserving the active document and undo stack
+ok 47 - read rejects empty file, preserving the active document and undo stack
+  ---
+  duration_ms: 0.5661
+  ...
+# Subtest: read rejects non-svg root, preserving the active document and undo stack
+ok 48 - read rejects non-svg root, preserving the active document and undo stack
+  ---
+  duration_ms: 0.522
+  ...
+# Subtest: read rejects unknown tag, preserving the active document and undo stack
+ok 49 - read rejects unknown tag, preserving the active document and undo stack
+  ---
+  duration_ms: 0.707
+  ...
+# Subtest: read rejects negative radius, preserving the active document and undo stack
+ok 50 - read rejects negative radius, preserving the active document and undo stack
+  ---
+  duration_ms: 0.6551
+  ...
+# Subtest: read rejects external entity, preserving the active document and undo stack
+ok 51 - read rejects external entity, preserving the active document and undo stack
+  ---
+  duration_ms: 0.3764
+  ...
+# Subtest: read rejects event handler, preserving the active document and undo stack
+ok 52 - read rejects event handler, preserving the active document and undo stack
+  ---
+  duration_ms: 0.6743
+  ...
+# Subtest: read rejects script, preserving the active document and undo stack
+ok 53 - read rejects script, preserving the active document and undo stack
+  ---
+  duration_ms: 0.6257
+  ...
+# Subtest: read rejects foreign namespace, preserving the active document and undo stack
+ok 54 - read rejects foreign namespace, preserving the active document and undo stack
+  ---
+  duration_ms: 0.576
+  ...
+# Subtest: read rejects non-matching viewBox, preserving the active document and undo stack
+ok 55 - read rejects non-matching viewBox, preserving the active document and undo stack
+  ---
+  duration_ms: 0.5786
+  ...
+# Subtest: read rejects leaf with children, preserving the active document and undo stack
+ok 56 - read rejects leaf with children, preserving the active document and undo stack
+  ---
+  duration_ms: 0.6013
+  ...
+# Subtest: read rejects unknown attribute, preserving the active document and undo stack
+ok 57 - read rejects unknown attribute, preserving the active document and undo stack
+  ---
+  duration_ms: 0.6416
+  ...
+# Subtest: text resembling agent instructions stays inert text across XML round trips
+ok 58 - text resembling agent instructions stays inert text across XML round trips
+  ---
+  duration_ms: 1.2597
+  ...
+1..58
+# tests 58
+# suites 0
+# pass 58
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 849.8989
+
+> svg-editor-phase1@0.1.0 check:architecture
+> npm run build --silent && node dist/tools/ArchitectureCheck.js
+
+Architecture OK: 44 TypeScript source files, 117 imports; dependency directions, class/file names and no free functions/switch verified.
