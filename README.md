@@ -4,7 +4,7 @@ Git 仓库：**https://github.com/lazyy11/svg-editor-phase1**
 
 课程提交文档：[doc/README.md](doc/README.md)（架构方案、过程记录、一致性自查、质量保证）。
 
-最终提交使用 [`final` 标签](https://github.com/lazyy11/svg-editor-phase1/tree/final)。本项目由 Codex 按给定要求实现、检查并记录过程。
+最终提交使用 [`final` 标签](https://github.com/lazyy11/svg-editor-phase1/tree/final)。
 
 ## 运行
 
