@@ -1,0 +1,20 @@
+@startuml
+title Phase 1 SVG editor - dependency direction
+skinparam componentStyle rectangle
+package "src/cli" as cli
+package "src/application" as app
+package "src/domain" as domain
+package "src/infrastructure" as infra
+component "src/main.ts\nComposition root" as main
+main --> cli
+main --> infra
+cli --> app
+app --> domain
+infra --> app : implements ports
+infra --> domain
+note bottom of domain
+Shape <- Rect/Circle/Ellipse/Line/Text/Group
+Group owns child Shapes (Composite).
+No filesystem, XML parser or terminal dependencies.
+end note
+@enduml
